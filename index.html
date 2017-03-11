@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<head>
+
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta name="keywords" content ="GIS, Geographic Information Systems, Auckland Transport, AT, Nick Dragunow">
+  <meta name="author" content ="Nick Dragunow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import fonts, css, frameworks. -->
+  <link rel="stylesheet" type="text/css" href="./css/stylesheetIndex.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Leaflet. -->
+  <link rel="stylesheet" href="./libraries/leaflet/leaflet.css" />
+  <script type="text/javascript" src="./libraries/leaflet/leaflet.js"></script>
+
+
+  <!-- Favicons generated at faviconit.com -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="196x196" href="img/favicons/fafavicon-192.png">
+  <link rel="icon" type="image/png" sizes="160x160" href="img/favicons/favicon-160.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/favicons/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/favicons/favicon-57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/favicon-114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/favicon-72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/favicon-144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/favicon-60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/favicon-120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/favicon-76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/favicon-152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/favicon-180.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="img/favicons/favicon-144.png">
+  <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+
+  <title>Nick Dragunow</title>
+
+</head>
+
+<body>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////// TITLE //////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+<div id="titleBackingRectangle">
+
+  <div id="titleName" class = "unselectable">NICK DRAGUNOW</div>
+  <div id="titleSubtext" class = "unselectable">Aspiring data scientist, software developer, and GIS professional</div>
+  <div id= "logoWrapper" clas = "unselectable">
+   	<img src="img/title_logo.png" id="mainTitleLogo" class ="unselectable">
+  </div>
+</div>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////// NAVBAR //////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+<script>
+
+/* Glues the navigation bar to the top of the screen once the user has scrolled
+down to it. */
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 350) {
+      $('#navBar').addClass("scrolls");
+  }
+  else {
+      $('#navBar').removeClass("scrolls");
+  }
+});
+
+function countClicksOnEmail() {
+/* Provides a copyable email address link if the 'EMAIL ME' button is hit twice,
+because user probably has no email client and the 'mailto' has failed. */
+
+  var timesClicked = parseInt(document.getElementById('emailMe').timesClicked, 0);
+
+  /* JS conditional assignment: variablename = (condition) ? value1:value2 
+  Essentially, if the variable is not a number, it is assigned the value '0'. If it 
+  is a number, it's assigned its current value (no change). */
+  timesClicked = isNaN(timesClicked) ? 0 : timesClicked;
+  timesClicked++;
+  document.getElementById('emailMe').timesClicked = timesClicked;
+
+  /* If the button has been hit twice, we provide an alternate email link. If it is
+  hit again, the link disappears until the page is refreshed. */
+  if (timesClicked == 2) {
+    document.getElementById("alternateEmailLink").innerHTML = "<p class = \"bodyText1\">No email client? Try this: <br /> ndraguno@gmail.com <br /> (Click  <a href='javascript:clearAlternateEmailLink();'>here</a> to close).</p>";
+  }
+}
+
+
+function clearAlternateEmailLink() {
+/* Clears the text of the alternate email popup. */
+
+  document.getElementById("alternateEmailLink").innerHTML = "";
+}
+
+</script>
+
+<div id="navBar">
+    <nav id="navBarButtonContainer">
+      <a href="/" class="navBarButton unselectable">HOME</a>
+      <a href="https://nz.linkedin.com/in/nick-dragunow-248388136" class="navBarButton unselectable">LINKEDIN</a>
+      <a href="/downloads/Nick_Dragunow_Resume_CV.pdf" class="navBarButton unselectable">CURRICULUM VITAE</a>
+      <p id="alternateEmailLink"></p>
+      <a id = "emailMe" value = "0" class="navBarButton unselectable" href="mailto:ndraguno@gmail.com" onclick="return countClicksOnEmail();">EMAIL ME</a>
+    </nav>
+</div>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// BODY CONTENT ///////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+<section class="bodyWrapper">
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////// ABOUT ///////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <div class="subsectionWrapper" style="top: 500px">
+
+    <h1 class="subheadingText1">About</h1>
+
+    <div class="bodyTextWrapper justified">
+      <p>A recent graduate of the University of Auckland (computer science, GIS, history, and criminology) with experience in GIS development, data manipulation, and programmatic approaches to data analysis. I'm particularly interested in the challenges facing our modern online ecosystems: how do we gather, store, and propagate data? How do we do so efficiently, ethically, and securely? Most importantly, how do we use that data to improve our understanding and add value to what we do?</p>
+
+      <p>If you'd like to get in contact, please feel free - I'm actively looking for volunteering opportunities and a full-time role, particularly in the field of GIS.</p>
+
+    </div>
+  </div>
+
+      <!--
+      <p>I don't expect my degree alone to speak for me. I've undertaken a number of projects to illustrate my skills, each implemented using industry-standard frameworks and tools.</p>
+
+      <p>My process is documented in full: a brief, notes on best practice, design decisions, and a post-release retrospective. Feedback is very welcome.</p>
+
+      -->
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// MY WORK //////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <div class="subsectionWrapper" style="top: 590px">
+
+    <h1 class="subheadingText1">My Work</h1>
+
+    <div class="bodyTextWrapper justified">
+      <p>I'm a huge advocate of code clarity and maintainability. As such, all of my projects come with supporting documentation explaining why I chose the technologies I did, where I found my datasets, how I processed them to suit my needs, and what I've learned from the experience. If they're not here yet they will be soon - projects are often uploaded before their documentation is complete.</p>
+
+      <p> If you would like more details about a project, advice on any of the technologies used, or permission to use or modify my code, please don't hesitate to send me an email. I'm always open to discussion and collaboration.</p>
+      <!--
+      <p style="font-style: italic">This section is constantly updated. If you like what I'm doing, please check back some time! There's bound to be something new.</p>
+      -->
+    </div>
+
+  </div>
+
+
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////// BusMapper //////////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <div class="subsectionWrapper" style="top: 675px">
+
+      <h1 class="subheadingText1">BusMapper</h1>
+      <h2 class="subheadingDateText">v0.1</h2>
+      <!-- Raleway presents numbers poorly, so it's replaced with Verdana here. -->
+      <h2 class="subheadingDateText" style=" font-weight: normal; font-family: Verdana">8/3/2017</h2> 
+
+      <a class="subheadingText2" style="font-size: 13pt; font-style: italic" href="./bus_mapper.html">View this in a mobile safe window</a>
+
+      <div class="bodyTextWrapper justified">
+        <p>BusMapper reflects the power of private sector involvement in the open data movement. Through their <a href="https://dev-portal.at.govt.nz/">developer API</a>, Auckland Transport offers access to a repository of rich spatial public transport data with entries for every bus currently on the city's roads.</p> 
+
+        <p>Using JavaScript and Leaflet, BusMapper accesses that information, filters it, and publishes 30 second updates on the location of each bus servicing a given route (drawing a trail across the previous 11 points). Every marker is clickable, revealing the ID number of the bus and the time at which that marker was placed.</p>
+
+        <p>For now it only supports the Outer Link (clockwise) - the bus I catch into town - but it's designed to be easily extensible. My mid-term goal is to digitize every route and provide users with a drop-down selector, and then eventually publish it as a mobile application.</p>
+
+
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, AJAX, Leaflet, jQuery, ArcMap, and Python (the last two for manipulating datasets, extracting the latitude &amp; longitude of geo-referenced points, data transformation, and re-projecting coordinates).
+        <p><strong>Data Formats:</strong> SHP, LYR, CSV, GTFS, JSON, GeoJSON. 
+
+      </div>
+
+      <!-- App specific dependencies (not used by anything else on this page). -->
+
+      <!-- Leaflet plugin for rotating markers based on bearing (attribution in containing file). -->
+      <script type="text/javascript" src="./libraries/leaflet_rotated_marker/leaflet.rotatedMarker.js"></script>
+
+      <!-- JS file with all of the helper functions called by the BusMapper code below. -->
+      <script type="text/javascript" src="./js/bus_mapper/bus_mapper_functions.js"></script>
+
+      <!-- JS file with definitions for custom made leaflet markers. -->
+      <script type="text/javascript" src="./js/bus_mapper/bus_mapper_leaflet_markers.js"></script>
+
+      <!-- .js file which defines the variable 'busStopLocations' - turned into a layer feature further down. -->
+      <script type="text/javascript" src="./data/bus_stops/outer_link_clockwise_stops.js"></script>
+
+      <!-- .js file which defines the variable 'outerLinkBusRoute' - turned into a polyline further down. -->
+      <script type="text/javascript" src="./data/bus_routes/bus_route_outer_link.js"></script>
+
+      <!-- JS file with button onclick code. -->
+      <script type="text/javascript" src="./js/bus_mapper/bus_mapper_button_controls.js"></script>
+
+      <!-- CSS stylesheet for the map and its buttons. -->
+      <link rel="stylesheet" type="text/css" href="./css/bus_mapper/bus_mapper_stylesheet.css"/>
+
+      <!-- ////////////////////////////////////// HTML ///////////////////////////////////////// -->
+
+      <!-- Div for the map window. -->
+      <div id="mapContainer" style="width: 1000px; top: 100px; height: 700px; background-color: rgb(110, 155, 50)">
+
+        <div id="map" style="width: 100%; height: 90%; text-align: left"></div>
+
+        <div class="busMapperButtonContainer">
+
+          <button type="button" id="btFirst" class="busMapperButton" onclick="resetView()">Reset View</button>
+          <button type="button" class="busMapperButton" onclick="clearPoints()">Clear Trails</button>
+          <button type="button" id="btSelectARoute" class="busMapperButton">Current Route:</button>
+          <input type="text" class ="displayCurrentRoute" name="currentRoute" value="Outer Link (Clockwise)" readonly>
+
+        </div>
+
+      </div>
+
+
+      <!-- /////////////////////////////////////// JS ////////////////////////////////////////// -->
+
+      <script>
+
+        // Most of the JavaScript code for this tool is stored in the "./js/bus_mapper" folder:
+
+        //    bus_mapper_functions.js       Contains all the custom functions called below.
+        //    bus_mapper_leaflet_markers.js     Defines the behaviour of our custom leaflet markers.
+        //    bus_mapper_ui_elements.js       #TODO
+
+        // TODO: move all of this into a function to reduce global variable clutter (poor form!).
+
+
+        ////////////////////////////////// CREATE MAP & BASEMAPS /////////////////////////////////////
+
+
+        // Create the map, set the default location and zoom, and initiate it.
+        var map = L.map('map').setView([-36.859696, 174.749179], 13);
+
+        // Define a colour basemap and add it to the map.
+        var colourBasemap = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          minZoom: 13,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+        }).addTo(map);
+
+        // Define a greyscale basemap, but don't add it yet - it'll be available from the layer control tab.
+        var greyscaleBasemap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmlja2RyYWd1bm93IiwiYSI6ImNpemhwdzlrNDAxcXkyeG93Z3h4ZDU0YmsifQ.S1bIfq6la-lLXUFifrVxHA', {
+        maxZoom: 18,
+        minZoom: 13,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.light'
+        });
+
+        // Define a satellite basemap but don't add it, as above.
+        var satelliteBasemap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          maxZoom: 18,
+          minZoom: 13,
+          attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        ///////////////////////////////// DEFINE IMPORTANT VARIABLES /////////////////////////////////
+
+
+        // This list contains layerGroup objects for each unique bus. Those layerGroups contain the 
+        // marker objects for that bus's locational data.
+        var listOfBusLayerGroups = [];
+
+        // Polyline layer (holds every polyline between bus points). This could be re-worked to allow 
+        // for differentiation between lines (i.e., lists of lines for each individual bus, not the lot).
+        var linesBetweenBusses = L.layerGroup();
+        linesBetweenBusses.addTo(map);
+
+
+        //////////////////////// ADD OVERLAYS AND BASEMAPS TO A LAYER TOGGLE /////////////////////////
+
+
+        // Create a layer of bus stops from a GeoJSON variable (explained in the function's comment).
+        //var busStopLayer = createBusStopLayer(); // Removed - trying to get custom markers working.
+
+        // Create a polyline layer for the outer link bus route using a list of latlongs (actually longlats!)
+        var outerLinkRoute = L.polyline(outerLinkBusRoute, {color: '#2b8cbe', weight: '5', clickable: 'false'}).addTo(map);
+
+        // Add the basemaps to the basemap container variable.
+        var baseMaps = {
+          "Colour": colourBasemap,
+          "Greyscale": greyscaleBasemap,
+          "Satellite": satelliteBasemap
+        };
+
+        // Add toggleable overlays to the overlay container variable.
+        var overlayMaps = {
+          //"Stops (Unfinished)": busStopLayer,
+          "Route": outerLinkRoute
+        };
+
+        // Initialize a control in the top right corner with the basemap and overlay toggleables. 
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+
+        ////////////////////////////////////// ADD THE LEGEND ////////////////////////////////////////
+
+
+        // Create a legend control in the bottom right corner of the map.
+        var busMapperLegend = L.control({position: 'bottomright'});
+
+        // Define the onAdd function.
+        busMapperLegend.onAdd = function (map) {
+
+        // Create the div for the busMapperLegend in the DOM.
+        var busMapperLegend = L.DomUtil.create('div', 'busMapperLegend');
+
+        // Define the CSS within the legend - images and text.
+        busMapperLegend.innerHTML += 
+        '<div style="height: 200px; width: 100px; background-color: rgba(196, 237, 134, 0.9);' +
+        '-webkit-border-radius: 2; -moz-border-radius: 2; border-radius: 2px;' +
+        'border: solid rgb(110, 155, 50); text-align: center">'+
+        '<br />' +
+        '<img src="data/images/outer_link_moving.png" class ="unselectable">' +
+        '<p class= "bodyText1 unselectable" style="line-height: 0px">Moving</p>' +
+        '<img src="data/images/outer_link_stopped.png" class="unselectable">' +
+        '<p class= "bodyText1 unselectable" style="line-height: 0px">Stopped</p>' +
+        '</div>'
+        
+        return busMapperLegend;
+
+        };
+
+        // Add the legend to the map.
+        busMapperLegend.addTo(map);
+
+
+        //////////////////////////////// GET & PUBLISH BUS LOCATIONS /////////////////////////////////
+
+
+        // Define an XMLHttpRequest object to make AJAX calls to the Auckland Transport server.
+        var aucklandTransportMessenger = new XMLHttpRequest();
+
+        // Associate an event listener to publish bus locations once we recieve the data. 
+        aucklandTransportMessenger.addEventListener("load", updateBusLocationsOnMap);
+
+        // Call a function which sends the AJAX HTTP GET request (runs on page load).
+        requestUpdatedBusInformation();
+
+        // Run the above function every 30 seconds to update bus locations.
+        var requestUpdatedBusInformation = setInterval(requestUpdatedBusInformation, 30000);
+
+      </script>
+      
+  </div>
+
+</section>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// FOOTER ///////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+
+
+<footer class="footerWrapper">
+   <p class = footerText>Built from scratch using a particularly <a href="https://www.sublimetext.com/">sublime text</a> editor.<br /> &copy; Nick Dragunow, 2017. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>
